@@ -5,7 +5,7 @@ import { Newspaper, Heart, ShieldAlert } from "lucide-react";
 export default function Dashboard() {
   const navItems = [
     { name: "News pages", icon: Newspaper, href: "/news" },
-    { name: "Donation sites", icon: Heart, href: "#donation" },
+    { name: "Donation sites", icon: Heart, href: "/locations-donations" },
     { name: "Vulnerability sites", icon: ShieldAlert, href: "#vulnerability" },
   ];
 
