@@ -18,48 +18,49 @@ export default function NewsScreen() {
   const [newsItems, setNewsItems] = useState<NewsItem[]>([
     {
       id: 1,
-      title: "New Breakthrough in Quantum Computing",
+      title: "Novo Avanço na Computação Quântica",
       description:
-        "Scientists have achieved a major milestone in quantum computing, demonstrating sustained quantum coherence for over 10 minutes.",
+        "Cientistas alcançaram um grande marco na computação quântica, demonstrando coerência quântica sustentada por mais de 10 minutos.",
       url: "https://example.com/quantum-computing",
-      category: "Technology",
-      publishedAt: "2 hours ago",
+      category: "Tecnologia",
+      publishedAt: "há 2 horas",
     },
     {
       id: 2,
-      title: "Global Climate Summit Reaches Historic Agreement",
+      title: "Cúpula do Clima Global Alcança Acordo Histórico",
       description:
-        "World leaders have agreed on ambitious new targets to reduce carbon emissions by 50% before 2030.",
+        "Líderes mundiais concordaram com novas metas ambiciosas para reduzir as emissões de carbono em 50% até 2030.",
       url: "https://example.com/climate-summit",
-      category: "Environment",
-      publishedAt: "5 hours ago",
+      category: "Meio Ambiente",
+      publishedAt: "há 5 horas",
     },
     {
       id: 3,
-      title: "Stock Markets Hit All-Time High",
+      title: "Mercados de Ações Batem Recorde Histórico",
       description:
-        "Major indices reached record levels today, driven by strong earnings reports and positive economic data.",
+        "Principais índices atingiram níveis recordes hoje, impulsionados por fortes relatórios de lucros e dados econômicos positivos.",
       url: "https://example.com/stock-markets",
-      category: "Finance",
-      publishedAt: "1 hour ago",
+      category: "Finanças",
+      publishedAt: "há 1 hora",
     },
     {
       id: 4,
-      title: "New AI Model Can Predict Protein Structures with 98% Accuracy",
+      title:
+        "Novo Modelo de IA Pode Prever Estruturas de Proteínas com 98% de Precisão",
       description:
-        "Researchers have developed an AI system that can predict complex protein structures with unprecedented accuracy, potentially revolutionizing drug discovery.",
+        "Pesquisadores desenvolveram um sistema de IA que pode prever estruturas complexas de proteínas com precisão sem precedentes, potencialmente revolucionando a descoberta de medicamentos.",
       url: "https://example.com/ai-protein",
-      category: "Science",
-      publishedAt: "3 hours ago",
+      category: "Ciência",
+      publishedAt: "há 3 horas",
     },
     {
       id: 5,
-      title: "Space Tourism Company Announces First Civilian Lunar Mission",
+      title: "Empresa de Turismo Espacial Anuncia Primeira Missão Lunar Civil",
       description:
-        "A private space company has revealed plans to send civilians on a journey around the moon by 2025.",
+        "Uma empresa privada de exploração espacial revelou planos para enviar civis em uma viagem ao redor da lua até 2025.",
       url: "https://example.com/lunar-mission",
-      category: "Space",
-      publishedAt: "6 hours ago",
+      category: "Espaço",
+      publishedAt: "há 6 horas",
     },
   ]);
 
@@ -70,7 +71,7 @@ export default function NewsScreen() {
     };
 
     updateDateTime();
-    const interval = setInterval(updateDateTime, 60000); // Update every minute
+    const interval = setInterval(updateDateTime, 60000); // Atualiza a cada minuto
 
     return () => clearInterval(interval);
   }, []);
@@ -87,21 +88,23 @@ export default function NewsScreen() {
       <div className="container mx-auto px-4 py-8">
         <header className="mb-8 z-[1_!important]">
           <h1 className="text-3xl font-bold text-emerald-400 mb-2">
-            Today's News
+            Notícias de Hoje
           </h1>
-          <div className=" flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-            <div className=" w-full sm:w-96">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div className="w-full sm:w-96">
               <input
                 type="text"
-                className="bg-zinc-800 border border-zinc-700 text-zinc-100 rounded-lg block w-full pl-2.5 p-2.5 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 "
-                placeholder="Search news..."
+                className="bg-zinc-800 border border-zinc-700 text-zinc-100 rounded-lg block w-full pl-2.5 p-2.5 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                placeholder="Buscar notícias..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
             <div className="flex items-center text-zinc-400">
               <Clock className="h-5 w-5 mr-2" />
-              <span className="text-sm">Last updated: {currentDateTime}</span>
+              <span className="text-sm">
+                Última atualização: {currentDateTime}
+              </span>
             </div>
           </div>
         </header>
@@ -132,14 +135,15 @@ export default function NewsScreen() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors"
                   >
-                    Read full article <ExternalLink className="ml-1 h-4 w-4" />
+                    Ler artigo completo{" "}
+                    <ExternalLink className="ml-1 h-4 w-4" />
                   </a>
                 </article>
               ))
             ) : (
               <div className="text-center py-10 bg-zinc-800 rounded-lg">
                 <p className="text-zinc-400">
-                  No news found matching your search.
+                  Nenhuma notícia encontrada para sua busca.
                 </p>
               </div>
             )}

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { MapPin, Search } from "lucide-react";
 
-// Types for our donation locations
+// Tipos para os locais de doação
 type DonationLocation = {
   id: string;
   name: string;
@@ -16,67 +16,79 @@ type DonationLocation = {
 };
 
 export default function DonationLocations() {
-  // Mock data for donation locations
+  // Dados simulados para os locais de doação
   const [locations, setLocations] = useState<DonationLocation[]>([
     {
       id: "1",
-      name: "Community Outreach Center",
-      address: "123 Main Street",
+      name: "Centro de Ação Comunitária",
+      address: "Rua Principal, 123",
       city: "Portland, OR",
-      distance: "0.8 miles",
-      acceptingItems: ["Clothing", "Non-perishable food", "Hygiene products"],
-      lastUpdated: "2 days ago",
+      distance: "0,8 milhas",
+      acceptingItems: [
+        "Roupas",
+        "Alimentos não perecíveis",
+        "Produtos de higiene",
+      ],
+      lastUpdated: "há 2 dias",
     },
     {
       id: "2",
-      name: "Hope Shelter",
-      address: "456 Pine Avenue",
+      name: "Abrigo Esperança",
+      address: "Avenida dos Pinheiros, 456",
       city: "Portland, OR",
-      distance: "1.2 miles",
-      acceptingItems: ["Blankets", "Winter clothing", "Canned goods"],
-      lastUpdated: "1 day ago",
+      distance: "1,2 milhas",
+      acceptingItems: [
+        "Cobertores",
+        "Roupas de inverno",
+        "Alimentos enlatados",
+      ],
+      lastUpdated: "há 1 dia",
     },
     {
       id: "3",
-      name: "Helping Hands Foundation",
-      address: "789 Oak Boulevard",
+      name: "Fundação Mãos Amigas",
+      address: "Boulevard do Carvalho, 789",
       city: "Portland, OR",
-      distance: "2.5 miles",
-      acceptingItems: ["Books", "Toys", "School supplies"],
-      lastUpdated: "5 hours ago",
+      distance: "2,5 milhas",
+      acceptingItems: ["Livros", "Brinquedos", "Material escolar"],
+      lastUpdated: "há 5 horas",
     },
     {
       id: "4",
-      name: "Goodwill Donation Center",
-      address: "101 Charity Lane",
+      name: "Centro de Doações Goodwill",
+      address: "Alameda Caridade, 101",
       city: "Portland, OR",
-      distance: "3.1 miles",
-      acceptingItems: ["Furniture", "Electronics", "Household items"],
-      lastUpdated: "Just now",
+      distance: "3,1 milhas",
+      acceptingItems: ["Móveis", "Eletrônicos", "Itens domésticos"],
+      lastUpdated: "agora mesmo",
     },
     {
       id: "5",
-      name: "Second Chance Thrift",
-      address: "202 Hope Street",
+      name: "Brechó Segunda Chance",
+      address: "Rua da Esperança, 202",
       city: "Portland, OR",
-      distance: "4.7 miles",
-      acceptingItems: ["Clothing", "Shoes", "Accessories"],
-      lastUpdated: "3 days ago",
+      distance: "4,7 milhas",
+      acceptingItems: ["Roupas", "Sapatos", "Acessórios"],
+      lastUpdated: "há 3 dias",
     },
     {
       id: "6",
-      name: "Food Bank Northwest",
-      address: "303 Giving Road",
+      name: "Banco de Alimentos Noroeste",
+      address: "Estrada da Solidariedade, 303",
       city: "Portland, OR",
-      distance: "5.3 miles",
-      acceptingItems: ["Non-perishable food", "Baby formula", "Pet food"],
-      lastUpdated: "Yesterday",
+      distance: "5,3 milhas",
+      acceptingItems: [
+        "Alimentos não perecíveis",
+        "Fórmula infantil",
+        "Ração para animais",
+      ],
+      lastUpdated: "ontem",
     },
   ]);
 
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Filter locations based on search query
+  // Filtra locais com base na pesquisa
   const filteredLocations = locations.filter(
     (location) =>
       location.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -90,19 +102,19 @@ export default function DonationLocations() {
     <div className="min-h-screen bg-zinc-900 text-zinc-100 p-4 md:p-6">
       <header className="mb-8">
         <h1 className="text-2xl md:text-3xl font-bold mb-2">
-          Donation Locations
+          Locais de Doação
         </h1>
         <p className="text-zinc-400">
-          Find places to donate items in your area
+          Encontre lugares para doar itens na sua região
         </p>
       </header>
 
-      {/* Search and filter section */}
+      {/* Seção de busca e filtro */}
       <div className="mb-6">
         <div>
           <input
             type="text"
-            placeholder="Search locations or items..."
+            placeholder="Pesquisar locais ou itens..."
             className="w-full bg-zinc-800 border border-zinc-700 rounded-lg py-2 pl-4 pr-4 text-zinc-100 placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-transparent"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -110,7 +122,7 @@ export default function DonationLocations() {
         </div>
       </div>
 
-      {/* Locations grid */}
+      {/* Grade de locais */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredLocations.map((location) => (
           <Link
@@ -138,7 +150,7 @@ export default function DonationLocations() {
                 </div>
 
                 <div className="mb-3">
-                  <p className="text-xs text-zinc-400 mb-1.5">Accepting:</p>
+                  <p className="text-xs text-zinc-400 mb-1.5">Aceitando:</p>
                   <div className="flex flex-wrap gap-1.5">
                     {location.acceptingItems.map((item, index) => (
                       <span
@@ -152,7 +164,7 @@ export default function DonationLocations() {
                 </div>
 
                 <div className="text-xs text-zinc-500 mt-3">
-                  Updated {location.lastUpdated}
+                  Atualizado {location.lastUpdated}
                 </div>
               </div>
             </div>
@@ -163,13 +175,13 @@ export default function DonationLocations() {
       {filteredLocations.length === 0 && (
         <div className="text-center py-12">
           <p className="text-zinc-400">
-            No donation locations found matching your search.
+            Nenhum local de doação encontrado correspondente à sua pesquisa.
           </p>
           <button
             onClick={() => setSearchQuery("")}
             className="mt-2 text-emerald-400 hover:text-emerald-300"
           >
-            Clear search
+            Limpar pesquisa
           </button>
         </div>
       )}

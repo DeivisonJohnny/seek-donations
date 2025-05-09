@@ -6,7 +6,7 @@ import Link from "next/link";
 interface NavItem {
   name: string;
   href: string;
-  icon: React.ComponentType<{ size: number }>; // Aqui ajustamos a tipagem
+  icon: React.ComponentType<{ size: number }>;
 }
 
 interface SidebarProps {
@@ -36,12 +36,12 @@ const Sidebar: FC<SidebarProps> = ({
         </Link>
         <button
           onClick={() => setIsSidebarOpen(false)}
-          className="rounded-md p-1 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-100 cursor-pointer "
+          className="rounded-md p-1 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-100 cursor-pointer"
         >
           <X size={20} />
         </button>
       </div>
-      <nav className="mt-6 px-4 ">
+      <nav className="mt-6 px-4">
         <ul className="space-y-2">
           {navItems.map((item) => (
             <li key={item.name}>

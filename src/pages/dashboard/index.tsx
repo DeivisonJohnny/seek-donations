@@ -4,16 +4,16 @@ import { Newspaper, Heart, ShieldAlert } from "lucide-react";
 
 export default function Dashboard() {
   const navItems = [
-    { name: "News pages", icon: Newspaper, href: "/news" },
-    { name: "Donation sites", icon: Heart, href: "/locations-donations" },
-    { name: "Vulnerability sites", icon: ShieldAlert, href: "#vulnerability" },
+    { name: "Notícias", icon: Newspaper, href: "/news" },
+    { name: "Locais de Doação", icon: Heart, href: "/locations-donations" },
+    { name: "Locais Vulneráveis", icon: ShieldAlert, href: "#vulnerability" },
   ];
 
   return (
     <div className="flex min-h-screen bg-zinc-900 text-zinc-100">
       <div className="flex flex-1 flex-col">
         <main className="flex-1 p-6">
-          <h2 className="mb-6 text-2xl font-bold text-zinc-100">Overview</h2>
+          <h2 className="mb-6 text-2xl font-bold text-zinc-100">Visão Geral</h2>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {navItems.map((item) => (
@@ -29,7 +29,7 @@ export default function Dashboard() {
                   {item.name}
                 </h3>
                 <p className="mt-2 text-center text-sm text-zinc-400">
-                  Access {item.name.toLowerCase()} and related information
+                  Acesse {item.name.toLowerCase()} e informações relacionadas
                 </p>
               </Link>
             ))}
@@ -37,7 +37,7 @@ export default function Dashboard() {
 
           <div className="mt-8 rounded-lg bg-zinc-800 p-6 border border-zinc-700">
             <h3 className="mb-4 text-xl font-medium text-zinc-100">
-              Recent Activity
+              Atividades Recentes
             </h3>
             <div className="space-y-4">
               {[1, 2, 3].map((i) => (
@@ -53,11 +53,10 @@ export default function Dashboard() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-zinc-200">
-                      New {navItems[i % 3].name.toLowerCase().slice(0, -1)}{" "}
-                      added
+                      Novo(a) {navItems[i % 3].name.toLowerCase()} adicionado(a)
                     </p>
                     <p className="text-xs text-zinc-400">
-                      {i} hour{i !== 1 ? "s" : ""} ago
+                      {i} hora{i !== 1 ? "s" : ""} atrás
                     </p>
                   </div>
                 </div>

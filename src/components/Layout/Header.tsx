@@ -7,19 +7,21 @@ import Sidebar from "./Menu";
 export type NavItem = {
   name: string;
   href: string;
-  icon: React.ComponentType<{ size: number }>; // Aqui ajustamos a tipagem
+  icon: React.ComponentType<{ size: number }>;
 };
 
+// Itens de navegação traduzidos
 const navItems = [
-  { name: "News pages", icon: Newspaper, href: "/news" },
-  { name: "Donation sites", icon: Heart, href: "#donation" },
-  { name: "Vulnerability sites", icon: ShieldAlert, href: "#vulnerability" },
+  { name: "Notícias", icon: Newspaper, href: "/news" },
+  { name: "Locais de Doação", icon: Heart, href: "/locations-donations" },
+  { name: "Locais Vulneráveis", icon: ShieldAlert, href: "#vulnerability" },
 ] as NavItem[];
+
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="sticky left-0 top-0 shadow-[0px_10px_50px_#000] ">
+    <div className="sticky left-0 top-0 shadow-[0px_10px_50px_#000]">
       <Sidebar
         isSidebarOpen={isSidebarOpen}
         setIsSidebarOpen={setIsSidebarOpen}
@@ -29,17 +31,17 @@ const Header = () => {
       <header className="sticky top-0 z-10 flex h-16 items-center justify-between bg-zinc-800 px-4 shadow-md">
         <button
           onClick={() => setIsSidebarOpen(true)}
-          className="rounded-md p-1 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-100 cursor-pointer "
+          className="rounded-md p-1 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-100 cursor-pointer"
         >
           <Menu size={20} />
         </button>
 
         <div className="flex items-center gap-2 md:hidden">
-          <h1 className="text-lg font-bold text-emerald-400">Dashboard</h1>
+          <h1 className="text-lg font-bold text-emerald-400">Painel</h1>
         </div>
 
         <div className="flex items-center justify-center gap-3 rounded-md px-3 py-1.5 w-1/3">
-          <h1 className="text-emerald-400 font-bold ">DevJohnny</h1>
+          <h1 className="text-emerald-400 font-bold">DevJohnny</h1>
         </div>
 
         <div className="flex items-center gap-4">
