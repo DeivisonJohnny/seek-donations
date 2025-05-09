@@ -85,18 +85,15 @@ export default function NewsScreen() {
   return (
     <div className="min-h-screen bg-zinc-900 text-zinc-100">
       <div className="container mx-auto px-4 py-8">
-        <header className="mb-8">
+        <header className="mb-8 z-[1_!important]">
           <h1 className="text-3xl font-bold text-emerald-400 mb-2">
             Today's News
           </h1>
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-            <div className="relative w-full sm:w-96">
-              <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                <Search className="h-5 w-5 text-zinc-400" />
-              </div>
+          <div className=" flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div className=" w-full sm:w-96">
               <input
                 type="text"
-                className="bg-zinc-800 border border-zinc-700 text-zinc-100 rounded-lg block w-full pl-10 p-2.5 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+                className="bg-zinc-800 border border-zinc-700 text-zinc-100 rounded-lg block w-full pl-2.5 p-2.5 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 "
                 placeholder="Search news..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}

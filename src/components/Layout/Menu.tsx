@@ -22,7 +22,7 @@ const Sidebar: FC<SidebarProps> = ({
 }) => {
   return (
     <aside
-      className={`fixed inset-y-0 left-0 z-50 w-64 bg-zinc-800 transition-transform duration-300 ease-in-out ${
+      className={`fixed inset-y-0 left-0 z-[100_!important] w-64 bg-zinc-800 transition-transform duration-300 ease-in-out ${
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
@@ -36,12 +36,12 @@ const Sidebar: FC<SidebarProps> = ({
         </Link>
         <button
           onClick={() => setIsSidebarOpen(false)}
-          className="rounded-md p-1 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-100"
+          className="rounded-md p-1 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-100 cursor-pointer "
         >
           <X size={20} />
         </button>
       </div>
-      <nav className="mt-6 px-4">
+      <nav className="mt-6 px-4 ">
         <ul className="space-y-2">
           {navItems.map((item) => (
             <li key={item.name}>
