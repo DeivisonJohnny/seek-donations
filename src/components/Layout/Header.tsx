@@ -36,10 +36,6 @@ const Header = () => {
           <Menu size={20} />
         </button>
 
-        <div className="flex items-center gap-2 md:hidden">
-          <h1 className="text-lg font-bold text-emerald-400">Painel</h1>
-        </div>
-
         <div className="flex items-center justify-center gap-3 rounded-md px-3 py-1.5 w-1/3">
           <h1 className="text-emerald-400 font-bold">DevJohnny</h1>
         </div>

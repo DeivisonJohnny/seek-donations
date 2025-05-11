@@ -2,69 +2,23 @@
 
 import { useState, useEffect } from "react";
 import { Search, Clock, ExternalLink } from "lucide-react";
-
-interface NewsItem {
-  id: number;
-  title: string;
-  description: string;
-  url: string;
-  category: string;
-  publishedAt: string;
-}
+import NewsApi, { NewsItem } from "@/service/NewsApi";
 
 export default function NewsScreen() {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentDateTime, setCurrentDateTime] = useState("");
-  const [newsItems, setNewsItems] = useState<NewsItem[]>([
-    {
-      id: 1,
-      title: "Novo Avanço na Computação Quântica",
-      description:
-        "Cientistas alcançaram um grande marco na computação quântica, demonstrando coerência quântica sustentada por mais de 10 minutos.",
-      url: "https://example.com/quantum-computing",
-      category: "Tecnologia",
-      publishedAt: "há 2 horas",
-    },
-    {
-      id: 2,
-      title: "Cúpula do Clima Global Alcança Acordo Histórico",
-      description:
-        "Líderes mundiais concordaram com novas metas ambiciosas para reduzir as emissões de carbono em 50% até 2030.",
-      url: "https://example.com/climate-summit",
-      category: "Meio Ambiente",
-      publishedAt: "há 5 horas",
-    },
-    {
-      id: 3,
-      title: "Mercados de Ações Batem Recorde Histórico",
-      description:
-        "Principais índices atingiram níveis recordes hoje, impulsionados por fortes relatórios de lucros e dados econômicos positivos.",
-      url: "https://example.com/stock-markets",
-      category: "Finanças",
-      publishedAt: "há 1 hora",
-    },
-    {
-      id: 4,
-      title:
-        "Novo Modelo de IA Pode Prever Estruturas de Proteínas com 98% de Precisão",
-      description:
-        "Pesquisadores desenvolveram um sistema de IA que pode prever estruturas complexas de proteínas com precisão sem precedentes, potencialmente revolucionando a descoberta de medicamentos.",
-      url: "https://example.com/ai-protein",
-      category: "Ciência",
-      publishedAt: "há 3 horas",
-    },
-    {
-      id: 5,
-      title: "Empresa de Turismo Espacial Anuncia Primeira Missão Lunar Civil",
-      description:
-        "Uma empresa privada de exploração espacial revelou planos para enviar civis em uma viagem ao redor da lua até 2025.",
-      url: "https://example.com/lunar-mission",
-      category: "Espaço",
-      publishedAt: "há 6 horas",
-    },
-  ]);
+  const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
+
+  async function fetchData() {
+    const data: NewsItem[] = await NewsApi.listAll();
+
+    if (data) {
+      setNewsItems(data);
+    }
+  }
 
   useEffect(() => {
+    fetchData();
     const updateDateTime = () => {
       const now = new Date();
       setCurrentDateTime(now.toLocaleString());
@@ -76,11 +30,11 @@ export default function NewsScreen() {
     return () => clearInterval(interval);
   }, []);
 
-  const filteredNews = newsItems.filter(
+  const filteredNews = newsItems?.filter(
     (item) =>
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.category.toLowerCase().includes(searchTerm.toLowerCase())
+      item.category.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -111,18 +65,18 @@ export default function NewsScreen() {
 
         <main>
           <div className="grid gap-6">
-            {filteredNews.length > 0 ? (
-              filteredNews.map((item) => (
+            {newsItems.length > 0 ? (
+              filteredNews?.map((item) => (
                 <article
                   key={item.id}
                   className="bg-zinc-800 rounded-lg p-6 hover:bg-zinc-700/50 transition-colors border border-zinc-700 hover:border-emerald-500"
                 >
                   <div className="flex justify-between items-start mb-2">
                     <span className="inline-block px-3 py-1 text-xs font-medium bg-zinc-700 text-emerald-400 rounded-full">
-                      {item.category}
+                      {item.category.name}
                     </span>
                     <span className="text-sm text-zinc-400">
-                      {item.publishedAt}
+                      {item.createAt}
                     </span>
                   </div>
                   <h2 className="text-xl font-semibold mb-2 text-zinc-100">
