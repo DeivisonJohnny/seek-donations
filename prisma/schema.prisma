@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -35,7 +34,8 @@ model Locations {
 
   name     String
   address  String
-  // distance String
+  city     String
+  url      String
   createAt DateTime @default(now())
   updateAt DateTime @default(now())
 }

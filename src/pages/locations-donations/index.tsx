@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { MapPin, Search } from "lucide-react";
+import { ExternalLink, MapPin, Search } from "lucide-react";
 
 // Tipos para os locais de doação
 type DonationLocation = {
@@ -10,7 +10,7 @@ type DonationLocation = {
   name: string;
   address: string;
   city: string;
-  distance: string;
+  url: string;
   acceptingItems: string[];
   lastUpdated: string;
 };
@@ -23,7 +23,7 @@ export default function DonationLocations() {
       name: "Centro de Ação Comunitária",
       address: "Rua Principal, 123",
       city: "Portland, OR",
-      distance: "0,8 milhas",
+      url: "https://instagram.com/deivisonjohnny",
       acceptingItems: [
         "Roupas",
         "Alimentos não perecíveis",
@@ -36,7 +36,7 @@ export default function DonationLocations() {
       name: "Abrigo Esperança",
       address: "Avenida dos Pinheiros, 456",
       city: "Portland, OR",
-      distance: "1,2 milhas",
+      url: "https://instagram.com/deivisonjohnny",
       acceptingItems: [
         "Cobertores",
         "Roupas de inverno",
@@ -49,7 +49,7 @@ export default function DonationLocations() {
       name: "Fundação Mãos Amigas",
       address: "Boulevard do Carvalho, 789",
       city: "Portland, OR",
-      distance: "2,5 milhas",
+      url: "https://instagram.com/deivisonjohnny",
       acceptingItems: ["Livros", "Brinquedos", "Material escolar"],
       lastUpdated: "há 5 horas",
     },
@@ -58,7 +58,7 @@ export default function DonationLocations() {
       name: "Centro de Doações Goodwill",
       address: "Alameda Caridade, 101",
       city: "Portland, OR",
-      distance: "3,1 milhas",
+      url: "https://instagram.com/deivisonjohnny",
       acceptingItems: ["Móveis", "Eletrônicos", "Itens domésticos"],
       lastUpdated: "agora mesmo",
     },
@@ -67,7 +67,7 @@ export default function DonationLocations() {
       name: "Brechó Segunda Chance",
       address: "Rua da Esperança, 202",
       city: "Portland, OR",
-      distance: "4,7 milhas",
+      url: "https://instagram.com/deivisonjohnny",
       acceptingItems: ["Roupas", "Sapatos", "Acessórios"],
       lastUpdated: "há 3 dias",
     },
@@ -76,7 +76,7 @@ export default function DonationLocations() {
       name: "Banco de Alimentos Noroeste",
       address: "Estrada da Solidariedade, 303",
       city: "Portland, OR",
-      distance: "5,3 milhas",
+      url: "https://instagram.com/deivisonjohnny",
       acceptingItems: [
         "Alimentos não perecíveis",
         "Fórmula infantil",
@@ -93,6 +93,7 @@ export default function DonationLocations() {
     (location) =>
       location.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       location.address.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      location.url.toLowerCase().includes(searchQuery.toLowerCase()) ||
       location.acceptingItems.some((item) =>
         item.toLowerCase().includes(searchQuery.toLowerCase())
       )
@@ -126,7 +127,8 @@ export default function DonationLocations() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredLocations.map((location) => (
           <Link
-            href={`/location/${location.id}`}
+            href={location.url}
+            target="_blank"
             key={location.id}
             className="block"
           >
@@ -136,9 +138,6 @@ export default function DonationLocations() {
                   <h2 className="text-lg font-medium text-zinc-100">
                     {location.name}
                   </h2>
-                  <span className="text-xs bg-zinc-700 text-zinc-300 px-2 py-1 rounded-full">
-                    {location.distance}
-                  </span>
                 </div>
 
                 <div className="flex items-start mb-3">
@@ -150,8 +149,13 @@ export default function DonationLocations() {
                 </div>
 
                 <div className="mb-3">
-                  <p className="text-xs text-zinc-400 mb-1.5">Aceitando:</p>
-                  <div className="flex flex-wrap gap-1.5">
+                  <p className="text-xs text-zinc-400 mb-1.5">
+                    Causa da doação:
+                  </p>
+                  <p className="text-[14px]  ">
+                    Crianças desabrigadas no interior de São Paulo
+                  </p>
+                  {/* <div className="flex flex-wrap gap-1.5">
                     {location.acceptingItems.map((item, index) => (
                       <span
                         key={index}
@@ -160,8 +164,16 @@ export default function DonationLocations() {
                         {item}
                       </span>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
+                <a
+                  href={location.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors"
+                >
+                  Ler artigo completo <ExternalLink className="ml-1 h-4 w-4" />
+                </a>
 
                 <div className="text-xs text-zinc-500 mt-3">
                   Atualizado {location.lastUpdated}
