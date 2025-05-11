@@ -1,102 +1,43 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ExternalLink, MapPin, Search } from "lucide-react";
-
-// Tipos para os locais de doação
-type DonationLocation = {
-  id: string;
-  name: string;
-  address: string;
-  city: string;
-  url: string;
-  acceptingItems: string[];
-  lastUpdated: string;
-};
+import LocationsDonationsApi, {
+  LocationsDonationsType,
+} from "@/service/LocationsDonationsApi";
 
 export default function DonationLocations() {
   // Dados simulados para os locais de doação
-  const [locations, setLocations] = useState<DonationLocation[]>([
-    {
-      id: "1",
-      name: "Centro de Ação Comunitária",
-      address: "Rua Principal, 123",
-      city: "Portland, OR",
-      url: "https://instagram.com/deivisonjohnny",
-      acceptingItems: [
-        "Roupas",
-        "Alimentos não perecíveis",
-        "Produtos de higiene",
-      ],
-      lastUpdated: "há 2 dias",
-    },
-    {
-      id: "2",
-      name: "Abrigo Esperança",
-      address: "Avenida dos Pinheiros, 456",
-      city: "Portland, OR",
-      url: "https://instagram.com/deivisonjohnny",
-      acceptingItems: [
-        "Cobertores",
-        "Roupas de inverno",
-        "Alimentos enlatados",
-      ],
-      lastUpdated: "há 1 dia",
-    },
-    {
-      id: "3",
-      name: "Fundação Mãos Amigas",
-      address: "Boulevard do Carvalho, 789",
-      city: "Portland, OR",
-      url: "https://instagram.com/deivisonjohnny",
-      acceptingItems: ["Livros", "Brinquedos", "Material escolar"],
-      lastUpdated: "há 5 horas",
-    },
-    {
-      id: "4",
-      name: "Centro de Doações Goodwill",
-      address: "Alameda Caridade, 101",
-      city: "Portland, OR",
-      url: "https://instagram.com/deivisonjohnny",
-      acceptingItems: ["Móveis", "Eletrônicos", "Itens domésticos"],
-      lastUpdated: "agora mesmo",
-    },
-    {
-      id: "5",
-      name: "Brechó Segunda Chance",
-      address: "Rua da Esperança, 202",
-      city: "Portland, OR",
-      url: "https://instagram.com/deivisonjohnny",
-      acceptingItems: ["Roupas", "Sapatos", "Acessórios"],
-      lastUpdated: "há 3 dias",
-    },
-    {
-      id: "6",
-      name: "Banco de Alimentos Noroeste",
-      address: "Estrada da Solidariedade, 303",
-      city: "Portland, OR",
-      url: "https://instagram.com/deivisonjohnny",
-      acceptingItems: [
-        "Alimentos não perecíveis",
-        "Fórmula infantil",
-        "Ração para animais",
-      ],
-      lastUpdated: "ontem",
-    },
-  ]);
+  const [locations, setLocations] = useState<LocationsDonationsType[]>([]);
+
+  async function insertData() {
+    const location = {
+      name: "Hapvida",
+      address: "Rua Jose Cavalcante, 54",
+      city: "Belo Horizonte",
+      url: "https://instagram.com.br",
+    } as LocationsDonationsType;
+
+    try {
+      await LocationsDonationsApi.create(location);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    insertData();
+  }, []);
 
   const [searchQuery, setSearchQuery] = useState("");
 
   // Filtra locais com base na pesquisa
   const filteredLocations = locations.filter(
-    (location) =>
+    (location: LocationsDonationsType) =>
       location.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       location.address.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      location.url.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      location.acceptingItems.some((item) =>
-        item.toLowerCase().includes(searchQuery.toLowerCase())
-      )
+      location.url.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
@@ -155,16 +96,6 @@ export default function DonationLocations() {
                   <p className="text-[14px]  ">
                     Crianças desabrigadas no interior de São Paulo
                   </p>
-                  {/* <div className="flex flex-wrap gap-1.5">
-                    {location.acceptingItems.map((item, index) => (
-                      <span
-                        key={index}
-                        className="text-xs bg-zinc-700 text-emerald-300 px-2 py-0.5 rounded-full"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div> */}
                 </div>
                 <a
                   href={location.url}
@@ -172,11 +103,11 @@ export default function DonationLocations() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors"
                 >
-                  Ler artigo completo <ExternalLink className="ml-1 h-4 w-4" />
+                  Fazer doação <ExternalLink className="ml-1 h-4 w-4" />
                 </a>
 
                 <div className="text-xs text-zinc-500 mt-3">
-                  Atualizado {location.lastUpdated}
+                  Atualizado {location.createAt}
                 </div>
               </div>
             </div>

@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { NextConnect } from "next-connect";
 import bodyParser from "./middlewares/BodyParser";
 import NewsController from "./controllers/NewsController";
+import LocationsDonationsController from "./controllers/LocationsDonationsController";
 
 export default function routes(
   api: NextConnect<NextApiRequest, NextApiResponse>
@@ -10,6 +11,8 @@ export default function routes(
 
   api.get("/news", NewsController.list);
   api.post("/news", NewsController.create);
+
+  api.post("/locations-donations", LocationsDonationsController.create);
 
   return api;
 }
