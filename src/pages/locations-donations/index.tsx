@@ -6,6 +6,7 @@ import { ExternalLink, MapPin, Search } from "lucide-react";
 import LocationsDonationsApi, {
   LocationsDonationsType,
 } from "@/service/LocationsDonationsApi";
+import Utils from "@/utils/utils";
 
 export default function DonationLocations() {
   // Dados simulados para os locais de doação
@@ -26,8 +27,17 @@ export default function DonationLocations() {
     }
   }
 
+  async function listData() {
+    try {
+      const data: LocationsDonationsType[] = await LocationsDonationsApi.list();
+      setLocations(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   useEffect(() => {
     insertData();
+    listData();
   }, []);
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -107,7 +117,7 @@ export default function DonationLocations() {
                 </a>
 
                 <div className="text-xs text-zinc-500 mt-3">
-                  Atualizado {location.createAt}
+                  Atualizado {Utils.formatData(location.createAt as string)}
                 </div>
               </div>
             </div>

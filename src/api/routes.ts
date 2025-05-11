@@ -13,6 +13,7 @@ export default function routes(
   api.post("/news", NewsController.create);
 
   api.post("/locations-donations", LocationsDonationsController.create);
+  api.get("/locations-donations", LocationsDonationsController.list);
 
   return api;
 }

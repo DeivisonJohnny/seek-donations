@@ -3,6 +3,14 @@ import Prisma from "@/service/Prisma";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default class LocationsDonationsController {
+  static async list(req: NextApiRequest, res: NextApiResponse) {
+    const news = await Prisma.locations.findMany({
+      orderBy: { createAt: "desc" },
+    });
+
+    return res.json(news);
+  }
+
   static async create(req: NextApiRequest, res: NextApiResponse) {
     const location = req.body as LocationsDonationsType;
 
