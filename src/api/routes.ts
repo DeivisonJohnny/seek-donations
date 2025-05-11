@@ -9,6 +9,7 @@ export default function routes(
   api.use(bodyParser);
 
   api.get("/news", NewsController.list);
+  api.post("/news", NewsController.create);
 
   return api;
 }

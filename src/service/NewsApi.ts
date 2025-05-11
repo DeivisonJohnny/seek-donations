@@ -5,12 +5,17 @@ export type NewsItem = {
   title: string;
   description: string;
   url: string;
-  category: { name: string };
+  category?: { name: string };
+  categoryId?: string;
   createAt: string;
 };
 
 export default class NewsApi {
   static listAll(): Promise<NewsItem[]> {
     return Api.get("news");
+  }
+
+  static async create(data: NewsItem) {
+    return Api.post("/news", data);
   }
 }

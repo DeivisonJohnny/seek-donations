@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Search, Clock, ExternalLink } from "lucide-react";
 import NewsApi, { NewsItem } from "@/service/NewsApi";
+import Utils from "@/utils/utils";
 
 export default function NewsScreen() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -10,10 +11,22 @@ export default function NewsScreen() {
   const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
 
   async function fetchData() {
-    const data: NewsItem[] = await NewsApi.listAll();
+    try {
+      const data: NewsItem[] = await NewsApi.listAll();
 
-    if (data) {
       setNewsItems(data);
+
+      // const dataInsert = {
+      //   title: "Rio grande do sul",
+      //   description:
+      //     "Rio grande do sul sofre com grande chuva e causa demolições",
+      //   category: { name: "Alagamentos urbanos" },
+      //   url: "https://instagram.com/deivisonjohnny",
+      // } as NewsItem;
+
+      // const createNews = await NewsApi.create(dataInsert);
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -34,7 +47,7 @@ export default function NewsScreen() {
     (item) =>
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.category.name.toLowerCase().includes(searchTerm.toLowerCase())
+      item.category?.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -73,10 +86,10 @@ export default function NewsScreen() {
                 >
                   <div className="flex justify-between items-start mb-2">
                     <span className="inline-block px-3 py-1 text-xs font-medium bg-zinc-700 text-emerald-400 rounded-full">
-                      {item.category.name}
+                      {item.category?.name}
                     </span>
                     <span className="text-sm text-zinc-400">
-                      {item.createAt}
+                      {Utils.formatData(item.createAt)}
                     </span>
                   </div>
                   <h2 className="text-xl font-semibold mb-2 text-zinc-100">
