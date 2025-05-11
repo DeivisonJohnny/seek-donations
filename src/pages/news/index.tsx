@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Search, Clock, ExternalLink } from "lucide-react";
+import { Clock, ExternalLink } from "lucide-react";
 import NewsApi, { NewsItem } from "@/service/NewsApi";
 import Utils from "@/utils/utils";
 
@@ -15,16 +15,6 @@ export default function NewsScreen() {
       const data: NewsItem[] = await NewsApi.listAll();
 
       setNewsItems(data);
-
-      // const dataInsert = {
-      //   title: "Rio grande do sul",
-      //   description:
-      //     "Rio grande do sul sofre com grande chuva e causa demolições",
-      //   category: { name: "Alagamentos urbanos" },
-      //   url: "https://instagram.com/deivisonjohnny",
-      // } as NewsItem;
-
-      // const createNews = await NewsApi.create(dataInsert);
     } catch (error) {
       console.log(error);
     }
@@ -32,15 +22,6 @@ export default function NewsScreen() {
 
   useEffect(() => {
     fetchData();
-    const updateDateTime = () => {
-      const now = new Date();
-      setCurrentDateTime(now.toLocaleString());
-    };
-
-    updateDateTime();
-    const interval = setInterval(updateDateTime, 60000); // Atualiza a cada minuto
-
-    return () => clearInterval(interval);
   }, []);
 
   const filteredNews = newsItems?.filter(
