@@ -7,7 +7,7 @@ import Utils from "@/utils/utils";
 
 export default function NewsScreen() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [currentDateTime, setCurrentDateTime] = useState("");
+  const [currentDateTime] = useState("");
   const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
 
   async function fetchData() {

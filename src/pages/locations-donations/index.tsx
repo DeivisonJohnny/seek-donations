@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ExternalLink, MapPin, Search } from "lucide-react";
+import { ExternalLink, MapPin } from "lucide-react";
 import LocationsDonationsApi, {
   LocationsDonationsType,
 } from "@/service/LocationsDonationsApi";
