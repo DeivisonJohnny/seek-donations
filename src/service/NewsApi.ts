@@ -7,7 +7,7 @@ export type NewsItem = {
   url: string;
   category?: { name: string };
   categoryId?: string;
-  createAt: string;
+  createdAt: string;
 };
 
 export default class NewsApi {

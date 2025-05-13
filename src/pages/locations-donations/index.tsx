@@ -117,7 +117,7 @@ export default function DonationLocations() {
                 </a>
 
                 <div className="text-xs text-zinc-500 mt-3">
-                  Atualizado {Utils.formatData(location.createAt as string)}
+                  Atualizado {Utils.formatData(location.createdAt as string)}
                 </div>
               </div>
             </div>

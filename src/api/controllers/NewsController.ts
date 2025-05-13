@@ -6,7 +6,7 @@ export default class NewsController {
   static async list(req: NextApiRequest, res: NextApiResponse) {
     const news = await Prisma.news.findMany({
       include: { category: { select: { name: true } } },
-      orderBy: { createAt: "desc" },
+      orderBy: { createdAt: "desc" },
     });
 
     return res.json(news);

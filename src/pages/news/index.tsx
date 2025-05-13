@@ -70,7 +70,7 @@ export default function NewsScreen() {
                       {item.category?.name}
                     </span>
                     <span className="text-sm text-zinc-400">
-                      {Utils.formatData(item.createAt)}
+                      {Utils.formatData(item.createdAt)}
                     </span>
                   </div>
                   <h2 className="text-xl font-semibold mb-2 text-zinc-100">

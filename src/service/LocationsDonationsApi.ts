@@ -6,7 +6,7 @@ export type LocationsDonationsType = {
   address: string;
   city: string;
   url: string;
-  createAt?: string;
+  createdAt?: string;
   updateAt?: string;
 };
 

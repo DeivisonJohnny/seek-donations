@@ -5,7 +5,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 export default class LocationsDonationsController {
   static async list(req: NextApiRequest, res: NextApiResponse) {
     const news = await Prisma.locations.findMany({
-      orderBy: { createAt: "desc" },
+      orderBy: { createdAt: "desc" },
     });
 
     return res.json(news);
