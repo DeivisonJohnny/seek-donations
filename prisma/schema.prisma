@@ -15,8 +15,8 @@ model News {
   category    Category @relation(fields: [categoryId], references: [id])
   categoryId  String
 
-  createAt DateTime @default(now())
-  updateAt DateTime @default(now())
+  createdAt DateTime @default(now())
+  updateAt  DateTime @default(now())
 }
 
 model Category {
@@ -25,17 +25,25 @@ model Category {
   name String
   news News[]
 
-  createAt DateTime @default(now())
-  updateAt DateTime @default(now())
+  createdAt DateTime @default(now())
+  updateAt  DateTime @default(now())
 }
 
 model Locations {
   id String @id @default(uuid())
 
-  name     String
-  address  String
-  city     String
-  url      String
-  createAt DateTime? @default(now())
-  updateAt DateTime? @default(now())
+  name      String
+  address   String
+  city      String
+  url       String
+  createdAt DateTime? @default(now())
+  updateAt  DateTime? @default(now())
+}
+
+model GeminiUsage {
+  id String @id @default(uuid())
+
+  tokenCount Int
+
+  createdAt DateTime? @default(now())
 }

@@ -15,4 +15,13 @@ export default class Utils {
 
     return formattedDate;
   }
+
+  static formatJsonString(jsonString: string) {
+    const jsonStringWithoutCodeBlock = jsonString
+      .replace("```json\n", "")
+      .replace("\n```", "");
+    const jsonObj = JSON.parse(jsonStringWithoutCodeBlock);
+
+    return JSON.stringify(jsonObj, null, 2);
+  }
 }
