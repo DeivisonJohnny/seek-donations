@@ -10,7 +10,7 @@ datasource db {
 model News {
   id          String   @id @default(uuid())
   title       String
-  description String   @db.VarChar(255)
+  description String   @db.Text
   url         String
   category    Category @relation(fields: [categoryId], references: [id])
   categoryId  String
