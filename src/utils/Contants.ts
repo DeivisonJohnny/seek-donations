@@ -10,3 +10,7 @@ export const PROMPTS = {
 
 Retorne apenas o JSON bruto, sem explicações, sem comentários, sem marcação de código (como três crases) e sem texto adicional. Traduza todos os textos para o português antes de responder.`,
 };
+
+export const QUERY_SEARCH = {
+  NEWS: "Noticias sobre doações pessoas ou agencias com vulnerabilidade",
+};

@@ -24,4 +24,14 @@ export default class Utils {
 
     return JSON.stringify(jsonObj, null, 2);
   }
+
+  static removeTagHtml(value: string) {
+    return value.replace(/<[^>]*>/g, "");
+  }
+
+  static removeEncodeHtml(text: string) {
+    const temp = document.createElement("div");
+    temp.innerHTML = text;
+    return temp.textContent || temp.innerText;
+  }
 }
