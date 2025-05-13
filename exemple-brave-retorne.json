@@ -1,0 +1,166 @@
+{
+  "data": {
+    "query": {
+      "original": "Noticias sobre doações pessoas ou agencias com vulnerabilidade",
+      "show_strict_warning": false,
+      "is_navigational": false,
+      "is_news_breaking": false,
+      "spellcheck_off": true,
+      "country": "br",
+      "bad_results": false,
+      "should_fallback": false,
+      "postal_code": "",
+      "city": "",
+      "header_country": "",
+      "more_results_available": true,
+      "state": ""
+    },
+    "mixed": {
+      "type": "mixed",
+      "main": [
+        {
+          "type": "web",
+          "index": 0,
+          "all": false
+        },
+        {
+          "type": "web",
+          "index": 1,
+          "all": false
+        },
+        {
+          "type": "videos",
+          "all": true
+        }
+      ],
+      "top": [],
+      "side": []
+    },
+    "type": "search",
+    "videos": {
+      "type": "videos",
+      "results": [
+        {
+          "type": "video_result",
+          "url": "https://www.youtube.com/watch?v=ORcd3wlpKoU",
+          "title": "Desapego e doação: renovando para 2025 | Jornal da Band - YouTube",
+          "description": "Com a chegada de 2025, o clima de renovação vai além das promessas de ano novo. Muitas pessoas aproveitam para organizar a casa, desapegar do que não usa mai...",
+          "age": "December 27, 2024",
+          "page_age": "2024-12-27T23:19:46",
+          "video": {
+            "duration": "01:59",
+            "views": 564,
+            "creator": "Band Jornalismo",
+            "publisher": "YouTube"
+          },
+          "meta_url": {
+            "scheme": "https",
+            "netloc": "youtube.com",
+            "hostname": "www.youtube.com",
+            "favicon": "https://imgs.search.brave.com/Wg4wjE5SHAargkzePU3eSLmWgVz84BEZk1SjSglJK_U/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v",
+            "path": "› watch"
+          },
+          "thumbnail": {
+            "src": "https://imgs.search.brave.com/gsALNqNHheEsZ4-CBof_QmBWSdE4PjH4LGB8wrlXvGs/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9P/UmNkM3dscEtvVS9t/YXhyZXNkZWZhdWx0/LmpwZw",
+            "original": "https://i.ytimg.com/vi/ORcd3wlpKoU/maxresdefault.jpg"
+          }
+        },
+        {
+          "type": "video_result",
+          "url": "https://www.youtube.com/watch?v=xs1e22gAIQA",
+          "title": "HPS PRECISA DE DOAÇÃO DE TODOS OS TIPOS DE SANGUE - ULBRA NOTÍCIAS ...",
+          "description": "Programa Ulbra Notícias do dia 07/11/2024 na íntegra. Retrancas:0:22 - Pronto socorro de Porto Alegre está precisando de doação de sangue.1:16 - Está aberta ...",
+          "age": "November 8, 2024",
+          "page_age": "2024-11-08T17:15:07",
+          "video": {
+            "duration": "05:26",
+            "creator": "ULBRA MULTI RS",
+            "publisher": "YouTube"
+          },
+          "meta_url": {
+            "scheme": "https",
+            "netloc": "youtube.com",
+            "hostname": "www.youtube.com",
+            "favicon": "https://imgs.search.brave.com/Wg4wjE5SHAargkzePU3eSLmWgVz84BEZk1SjSglJK_U/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvOTkyZTZiMWU3/YzU3Nzc5YjExYzUy/N2VhZTIxOWNlYjM5/ZGVjN2MyZDY4Nzdh/ZDYzMTYxNmI5N2Rk/Y2Q3N2FkNy93d3cu/eW91dHViZS5jb20v",
+            "path": "› watch"
+          },
+          "thumbnail": {
+            "src": "https://imgs.search.brave.com/prKJNFZ0P5Q-mG1pWH1AjPnQr6zqDa7QY4Twq_FbGQo/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS94/czFlMjJnQUlRQS9t/YXhyZXNkZWZhdWx0/LmpwZw",
+            "original": "https://i.ytimg.com/vi/xs1e22gAIQA/maxresdefault.jpg"
+          }
+        }
+      ],
+      "mutated_by_goggles": false
+    },
+    "web": {
+      "type": "search",
+      "results": [
+        {
+          "title": "ONGs criam soluções para recolher doações durante isolamento | Agência Brasil",
+          "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2020-04/ongs-criam-solucoes-para-recolher-doacoes-durante-isolamento",
+          "is_source_local": false,
+          "is_source_both": false,
+          "description": "Para conectar doadores isolados e famílias impactadas pela crise do coronavírus, ONGs apostam em redes sociais, plataformas digitais e campanhas online para arrecadar <strong>doações</strong>.",
+          "page_age": "2020-04-03T20:58:00",
+          "profile": {
+            "name": "Ebc",
+            "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2020-04/ongs-criam-solucoes-para-recolher-doacoes-durante-isolamento",
+            "long_name": "agenciabrasil.ebc.com.br",
+            "img": "https://imgs.search.brave.com/m23dXvOhAgbuwxwe5ggFEb0rJjvFo5hLul3eZ5I6RZ8/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMzVkNzBmM2Qw/NjI3NzZmNjMwOWVi/ZWNmYTc1M2JiZjBh/N2EwMjlhNDdlNWRh/YWQ1Y2U4YmI2ZWJk/ZTlkNzRkYS9hZ2Vu/Y2lhYnJhc2lsLmVi/Yy5jb20uYnIv"
+          },
+          "language": "pt",
+          "family_friendly": true,
+          "type": "search_result",
+          "subtype": "generic",
+          "is_live": false,
+          "meta_url": {
+            "scheme": "https",
+            "netloc": "agenciabrasil.ebc.com.br",
+            "hostname": "agenciabrasil.ebc.com.br",
+            "favicon": "https://imgs.search.brave.com/m23dXvOhAgbuwxwe5ggFEb0rJjvFo5hLul3eZ5I6RZ8/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMzVkNzBmM2Qw/NjI3NzZmNjMwOWVi/ZWNmYTc1M2JiZjBh/N2EwMjlhNDdlNWRh/YWQ1Y2U4YmI2ZWJk/ZTlkNzRkYS9hZ2Vu/Y2lhYnJhc2lsLmVi/Yy5jb20uYnIv",
+            "path": "› geral  › noticia  › 2020-04  › ongs-criam-solucoes-para-recolher-doacoes-durante-isolamento"
+          },
+          "thumbnail": {
+            "src": "https://imgs.search.brave.com/Jvq9aNA-CFeCUjrJcPaNBjZ8LsPZBPRB6WSGo0zTsZE/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZW5zLmViYy5jb20u/YnIvOXl5MDZCZE9a/Q0NSN2ozRGRBOUxp/aGFUWlNvPS8xNjAw/eDgwMC9odHRwczov/L2FnZW5jaWFicmFz/aWwuZWJjLmNvbS5i/ci9zaXRlcy9kZWZh/dWx0L2ZpbGVzL2F0/b21zL2ltYWdlLzEw/MTc5NjgtMDYwNTIw/MTZkc2NfOTYwNS0u/anBnP2l0b2s9RlJD/M2Uya1k",
+            "original": "https://imagens.ebc.com.br/9yy06BdOZCCR7j3DdA9LihaTZSo=/1600x800/https://agenciabrasil.ebc.com.br/sites/default/files/atoms/image/1017968-06052016dsc_9605-.jpg?itok=FRC3e2kY",
+            "logo": false
+          },
+          "age": "April 3, 2020"
+        },
+        {
+          "title": "Fome no Brasil: Como ajudar pessoas a comer e sobreviver na pandemia - 23/03/2021 - UOL ECOA",
+          "url": "https://www.uol.com.br/ecoa/ultimas-noticias/2021/03/23/fome-no-brasil-como-ajudar-pessoas-a-comer-e-sobreviver-na-pandemia.htm",
+          "is_source_local": false,
+          "is_source_both": false,
+          "description": "Vakinha: http://vaka.me/1952247 · Brigada Solidária - Curitiba (PR) <strong>Desde 2020 a brigada arrecada fundos, alimentos e produtos de higiene e limpeza para famílias em situação de vulnerabilidade</strong>. São cerca de 50 famílias atendidas mensalmente com cestas básicas.",
+          "page_age": "2022-02-06T19:29:35",
+          "profile": {
+            "name": "Uol",
+            "url": "https://www.uol.com.br/ecoa/ultimas-noticias/2021/03/23/fome-no-brasil-como-ajudar-pessoas-a-comer-e-sobreviver-na-pandemia.htm",
+            "long_name": "uol.com.br",
+            "img": "https://imgs.search.brave.com/Y_wC7cbLNkxehTmOXMws5Tixdu5aOHFP34unjiTtrZc/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMmZiMWIwMDU5/YmI0MTA4YjgxZTRi/OWRiMzFkMzhjMzY0/YTEwZGY3ZWJhNjg1/NjA1ZWUyZDZlM2E3/Y2MwYmY3Ni93d3cu/dW9sLmNvbS5ici8"
+          },
+          "language": "pt",
+          "family_friendly": true,
+          "type": "search_result",
+          "subtype": "article",
+          "is_live": false,
+          "meta_url": {
+            "scheme": "https",
+            "netloc": "uol.com.br",
+            "hostname": "www.uol.com.br",
+            "favicon": "https://imgs.search.brave.com/Y_wC7cbLNkxehTmOXMws5Tixdu5aOHFP34unjiTtrZc/rs:fit:32:32:1:0/g:ce/aHR0cDovL2Zhdmlj/b25zLnNlYXJjaC5i/cmF2ZS5jb20vaWNv/bnMvMmZiMWIwMDU5/YmI0MTA4YjgxZTRi/OWRiMzFkMzhjMzY0/YTEwZGY3ZWJhNjg1/NjA1ZWUyZDZlM2E3/Y2MwYmY3Ni93d3cu/dW9sLmNvbS5ici8",
+            "path": "› ecoa  › ultimas-noticias  › 2021  › 03  › 23  › fome-no-brasil-como-ajudar-pessoas-a-comer-e-sobreviver-na-pandemia.htm"
+          },
+          "thumbnail": {
+            "src": "https://imgs.search.brave.com/_lLZ7QJ37nFa8p4c-boJ_8SOlptNeV9sxi2jvhnnGx8/rs:fit:200:200:1:0/g:ce/aHR0cHM6Ly9jb250/ZXVkby5pbWd1b2wu/Y29tLmJyL2MvaW50/ZXJhY2FvL2ZhY2Vi/b29rL3VvbC1lY29h/LXdpZGUucG5n",
+            "original": "https://conteudo.imguol.com.br/c/interacao/facebook/uol-ecoa-wide.png",
+            "logo": false
+          },
+          "age": "February 6, 2022"
+        }
+      ],
+      "family_friendly": true
+    }
+  }
+}
