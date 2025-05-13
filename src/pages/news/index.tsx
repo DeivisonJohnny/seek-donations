@@ -2,19 +2,19 @@
 
 import { useState, useEffect } from "react";
 import { Clock, ExternalLink } from "lucide-react";
-import NewsApi, { NewsItem } from "@/service/NewsApi";
+import NewsApi, { NewsType } from "@/service/NewsApi";
 import Utils from "@/utils/utils";
 
 export default function NewsScreen() {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentDateTime] = useState("");
-  const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
+  const [newsItems, setNewsTypes] = useState<NewsType[]>([]);
 
   async function fetchData() {
     try {
-      const data: NewsItem[] = await NewsApi.listAll();
+      const data: NewsType[] = await NewsApi.listAll();
 
-      setNewsItems(data);
+      setNewsTypes(data);
     } catch (error) {
       console.log(error);
     }
@@ -70,7 +70,7 @@ export default function NewsScreen() {
                       {item.category?.name}
                     </span>
                     <span className="text-sm text-zinc-400">
-                      {Utils.formatData(item.createdAt)}
+                      {Utils.formatData(item.createdAt as string)}
                     </span>
                   </div>
                   <h2 className="text-xl font-semibold mb-2 text-zinc-100">

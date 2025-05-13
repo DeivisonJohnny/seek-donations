@@ -1,5 +1,5 @@
 import BraveApi, { SearchBraveResponse } from "@/service/BraveApi";
-import { NewsItem } from "@/service/NewsApi";
+import { NewsType } from "@/service/NewsApi";
 import Prisma from "@/service/Prisma";
 import { QUERY_SEARCH } from "@/utils/Contants";
 import Utils from "@/utils/utils";
@@ -27,7 +27,7 @@ export default class SearchController {
 
       const resultsWebSearch = searchResponse.data?.web?.results;
 
-      const newsForInsert: NewsItem[] = resultsWebSearch.map((item) => ({
+      const newsForInsert: NewsType[] = resultsWebSearch.map((item) => ({
         title: item.title,
         description: Utils.removeTagHtml(item.description),
         url: item.url,

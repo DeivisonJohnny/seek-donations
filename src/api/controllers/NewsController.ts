@@ -1,4 +1,4 @@
-import { NewsItem } from "@/service/NewsApi";
+import { NewsType } from "@/service/NewsApi";
 import Prisma from "@/service/Prisma";
 import { NextApiRequest, NextApiResponse } from "next";
 
@@ -13,7 +13,7 @@ export default class NewsController {
   }
 
   static async create(req: NextApiRequest, res: NextApiResponse) {
-    const dataNews = req.body as NewsItem;
+    const dataNews = req.body as NewsType;
 
     const newData = await Prisma.news.create({
       data: {
