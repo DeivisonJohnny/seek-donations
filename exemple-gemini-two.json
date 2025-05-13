@@ -1,0 +1,36 @@
+{
+  "data": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "```json\n[\n  {\n    \"title\": \"OMS declara fim da emergência global de COVID-19\",\n    \"description\": \"A Organização Mundial da Saúde anunciou o fim da emergência de saúde pública de interesse internacional devido à pandemia de COVID-19.\",\n    \"url\": \"https://www.who.int/news-room/detail/11-05-2023-who-declares-covid-19-a-global-health-emergency\",\n    \"categoryId\": \"a1b2c3d4-e5f6-7890-1234-567890abcdef\"\n  },\n  {\n    \"title\": \"Inflação nos EUA cai para 3%, menor nível em dois anos\",\n    \"description\": \"O índice de preços ao consumidor nos EUA registrou queda para 3%, menor taxa em dois anos, indicando um possível arrefecimento da inflação.\",\n    \"url\": \"https://www.wsj.com/articles/us-inflation-rate-falls-to-3-lowest-in-two-years-11687027281\",\n    \"categoryId\": \"f0e9d8c7-b6a5-4321-9876-543210fedcba\"\n  },\n  {\n    \"title\": \"Guerra na Ucrânia: tensões aumentam após ataque a barragem de Kakhovka\",\n    \"description\": \"A destruição da barragem de Kakhovka na Ucrânia causou inundações devastadoras e elevou as tensões entre Rússia e Ucrânia.\",\n    \"url\": \"https://www.bbc.com/news/world-europe-65955263\",\n    \"categoryId\": \"57890abc-def0-1234-5678-90abcdef0123\"\n  },\n  {\n    \"title\": \"Crise climática: relatório da ONU alerta para impactos devastadores\",\n    \"description\": \"Um novo relatório da ONU alerta para os impactos cada vez mais devastadores da crise climática, com consequências severas para o planeta.\",\n    \"url\": \"https://www.un.org/en/climatechange\",\n    \"categoryId\": \"369abcde-fghi-jklm-nopq-rstuvwxy12345\"\n  },\n  {\n    \"title\": \"Brasil registra aumento no número de empregos formais\",\n    \"description\": \"O Brasil registrou um aumento significativo no número de empregos formais nos últimos meses, impulsionando a economia.\",\n    \"url\": \"https://agenciabrasil.ebc.com.br/economia\",\n    \"categoryId\": \"47890abc-def1-2345-6789-0abcdef12345\"\n  },\n  {\n    \"title\": \"Avanços tecnológicos na Inteligência Artificial geram debates éticos\",\n    \"description\": \"Os rápidos avanços na IA geram debates sobre questões éticas e o impacto da tecnologia na sociedade.\",\n    \"url\": \"https://www.nytimes.com/section/technology\",\n    \"categoryId\": \"6890abcde-fgh2-jkl3-nop4-qrstuvwxy67890\"\n  },\n  {\n    \"title\": \"Crescimento econômico da China desacelera no primeiro trimestre\",\n    \"description\": \"A economia chinesa apresentou uma desaceleração em seu crescimento no primeiro trimestre de 2024, gerando preocupações globais.\",\n    \"url\": \"https://www.ft.com/content/348e7567-217f-4234-b067-1909c16a614b\",\n    \"categoryId\": \"790abcde-fgh3-jkl4-nop5-qrstuvwxy78901\"\n  },\n  {\n    \"title\": \"Eleições presidenciais na Argentina: cenário incerto\",\n    \"description\": \"As eleições presidenciais na Argentina se aproximam, com um cenário político e econômico incerto para o país.\",\n    \"url\": \"https://www.reuters.com/world/latin-america/argentina-elections-2023-2024-02-02/\",\n    \"categoryId\": \"80abcde-fgh4-jkl5-nop6-qrstuvwxy89012\"\n  },\n  {\n    \"title\": \"Nova variante da gripe aviária preocupa cientistas\",\n    \"description\": \"Uma nova variante da gripe aviária altamente patogênica foi detectada, causando preocupação entre os cientistas.\",\n    \"url\": \"https://www.cdc.gov/flu/avianflu/index.htm\",\n    \"categoryId\": \"90abcde-fgh5-jkl6-nop7-qrstuvwxy90123\"\n  },\n  {\n    \"title\": \"Aumento da taxa de juros nos EUA impacta mercados globais\",\n    \"description\": \"O aumento da taxa de juros pelo Federal Reserve (EUA) causou impactos significativos nos mercados financeiros globais.\",\n    \"url\": \"https://www.federalreserve.gov/\",\n    \"categoryId\": \"01abcde-fgh6-jkl7-nop8-qrstuvwxy01234\"\n  }\n]\n```\n\n**Observação:** Os links fornecidos são exemplos genéricos relacionados aos títulos das notícias.  As URLs para notícias reais podem variar dependendo do dia e da disponibilidade de notícias atuais.  Os UUIDs são gerados aleatoriamente e podem ser substituídos por um sistema de geração e gerenciamento de IDs mais robusto em uma aplicação real. A tradução foi feita com o auxílio de ferramentas de tradução automática e pode necessitar de revisão para maior precisão.  O limite de caracteres na descrição foi respeitado.\n"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "avgLogprobs": -0.23576535631806125
+      }
+    ],
+    "modelVersion": "gemini-1.5-flash",
+    "usageMetadata": {
+      "promptTokenCount": 280,
+      "candidatesTokenCount": 1343,
+      "totalTokenCount": 1623,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 280
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1343
+        }
+      ]
+    }
+  }
+}

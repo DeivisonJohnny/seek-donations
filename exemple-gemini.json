@@ -1,0 +1,36 @@
+{
+  "data": {
+    "candidates": [
+      {
+        "content": {
+          "parts": [
+            {
+              "text": "```json\n[\n  {\n    \"title\": \"Líderes globais se reúnem para discutir a crise climática\",\n    \"description\": \"A cúpula internacional abordará as mudanças climáticas e buscará soluções para reduzir as emissões de gases do efeito estufa.\",\n    \"url\": \"https://www.exemplo.com/clima\",\n    \"categoryId\": \"a1b2c3d4-e5f6-7890-1234-567890abcdef\"\n  },\n  {\n    \"title\": \"Guerra na Ucrânia: tensões continuam altas\",\n    \"description\": \"Os combates na Ucrânia persistem, causando preocupação internacional e uma crise humanitária.\",\n    \"url\": \"https://www.exemplo.com/ucrania\",\n    \"categoryId\": \"f0e9d8c7-b6a5-4321-9876-543210fedcba\"\n  },\n  {\n    \"title\": \"Crise econômica global preocupa especialistas\",\n    \"description\": \"A inflação e a incerteza econômica geram preocupações sobre uma possível recessão global.\",\n    \"url\": \"https://www.exemplo.com/economia\",\n    \"categoryId\": \"55555555-5555-5555-5555-555555555555\"\n  },\n  {\n    \"title\": \"Novas tecnologias prometem revolucionar a medicina\",\n    \"description\": \"Avanços na área da biotecnologia e inteligência artificial estão transformando o tratamento de doenças.\",\n    \"url\": \"https://www.exemplo.com/saude\",\n    \"categoryId\": \"aaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\"\n  },\n  {\n    \"title\": \"Aumento da pobreza extrema em países em desenvolvimento\",\n    \"description\": \"A pobreza extrema afeta milhões e exige ações urgentes para mitigar os impactos sociais e econômicos.\",\n    \"url\": \"https://www.exemplo.com/pobreza\",\n    \"categoryId\": \"bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb\"\n  },\n  {\n    \"title\": \"Desastres naturais causam estragos em várias regiões\",\n    \"description\": \"Tempestades, enchentes e incêndios florestais afetam populações em todo o mundo.\",\n    \"url\": \"https://www.exemplo.com/desastres\",\n    \"categoryId\": \"cccccccc-cccc-cccc-cccc-cccccccccccc\"\n  },\n  {\n    \"title\": \"Escasez de alimentos preocupa a ONU\",\n    \"description\": \"A falta de alimentos em várias regiões do mundo ameaça a segurança alimentar global.\",\n    \"url\": \"https://www.exemplo.com/alimentos\",\n    \"categoryId\": \"dddddddd-dddd-dddd-dddd-dddddddddddd\"\n  },\n  {\n    \"title\": \"Debate sobre imigração ganha força em países europeus\",\n    \"description\": \"A imigração ilegal e os fluxos migratórios geram debates acalorados em vários países da Europa.\",\n    \"url\": \"https://www.exemplo.com/imigracao\",\n    \"categoryId\": \"eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee\"\n  },\n  {\n    \"title\": \"Avanços na exploração espacial\",\n    \"description\": \"Novas missões espaciais prometem expandir o conhecimento sobre o universo e o espaço sideral.\",\n    \"url\": \"https://www.exemplo.com/espaco\",\n    \"categoryId\": \"ffffffff-ffff-ffff-ffff-ffffffffffff\"\n  },\n  {\n    \"title\": \"Pandemia de gripe aviária preocupa autoridades sanitárias\",\n    \"description\": \"O vírus da gripe aviária se espalha e preocupa as autoridades de saúde global.\",\n    \"url\": \"https://www.exemplo.com/gripe\",\n    \"categoryId\": \"11111111-1111-1111-1111-111111111111\"\n  }\n]\n```\n"
+            }
+          ],
+          "role": "model"
+        },
+        "finishReason": "STOP",
+        "avgLogprobs": -0.11330664625602714
+      }
+    ],
+    "modelVersion": "gemini-1.5-flash",
+    "usageMetadata": {
+      "promptTokenCount": 104,
+      "candidatesTokenCount": 943,
+      "totalTokenCount": 1047,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 104
+        }
+      ],
+      "candidatesTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 943
+        }
+      ]
+    }
+  }
+}
