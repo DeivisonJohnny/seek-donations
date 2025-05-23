@@ -13,4 +13,7 @@ Retorne apenas o JSON bruto, sem explicações, sem comentários, sem marcação
 
 export const QUERY_SEARCH = {
   NEWS: "Noticias sobre doações pessoas ou agencias com vulnerabilidade",
+  LOCATION_DONATIONS: `
+  locais de doação atualizados perto de mim site:.org OR site:.gov OR site:.br 'doações 2025' OR 'campanha de doação' OR 'ponto de coleta' OR 'como doar' -blogspot.com -mercadolivre.com
+  `,
 };

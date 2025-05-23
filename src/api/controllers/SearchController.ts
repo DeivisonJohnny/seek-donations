@@ -69,4 +69,24 @@ export default class SearchController {
       console.log("Erro da tentativa----> ", error);
     }
   }
+
+  static async LocationFetchUpdated(req: NextApiRequest, res: NextApiResponse) {
+    try {
+      const searchLocations = await BraveApi.get(
+        "maps/search/Todos+Locais+de+doações/@-9.6535459,-35.7490725,12815m/data=!3m2!1e3!4b1?entry=ttu&g_ep=EgoyMDI1MDUxMi4wIKXMDSoASAFQAw%3D%3D",
+        {
+          // params: {
+          //   q: QUERY_SEARCH.NEWS,
+          //   count: 10,
+          //   // result_filter: "news", // -> Filtra apenas o resultado da consulta. Na maioria das vezes retorna sem dados
+          // },
+        }
+      );
+
+      return res.status(201).json(searchLocations.data);
+    } catch (error) {
+      console.log(error);
+      return res.status(412);
+    }
+  }
 }

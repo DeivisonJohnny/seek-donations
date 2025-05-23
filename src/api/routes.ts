@@ -22,6 +22,7 @@ export default function routes(
 
   api.post("/news-fetch", GeminiController.newsFetchUpdate);
   api.post("search/news", SearchController.newsFetchUpdated);
+  api.post("search/locations", SearchController.LocationFetchUpdated);
 
   return api;
 }
