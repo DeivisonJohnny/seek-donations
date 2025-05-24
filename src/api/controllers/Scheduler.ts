@@ -1,5 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import axios from "axios";
 import cron from "node-cron";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 export default class Scheduler {
   constructor() {
@@ -7,7 +8,7 @@ export default class Scheduler {
   }
 
   private startCron() {
-    cron.schedule("*/1 * * * *", async () => {
+    cron.schedule("*/30 * * * *", async () => {
       console.log("");
       console.log("######################################");
       console.log("#                                    #");
@@ -16,10 +17,15 @@ export default class Scheduler {
       console.log("######################################");
       console.log("");
 
-      // Coloque aqui sua lógica do cron
+      try {
+        const response = await this.insertNews();
+        console.log("✅ News inserted successfully:", response.data);
+      } catch (error) {
+        console.error("❌ Error inserting news:", (error as Error).message);
+      }
     });
 
-    console.log("Cron agendado.");
+    console.log("🕒 Cron agendado para rodar a cada 30 minuto.");
   }
 
   static handler(req: NextApiRequest, res: NextApiResponse) {
@@ -27,15 +33,30 @@ export default class Scheduler {
       res.setHeader("Allow", ["POST"]);
       return res.status(405).json({ error: "Method Not Allowed" });
     }
-    new Scheduler(); // ✅ aqui o cron é iniciado
 
     try {
-      return res.status(200).json({ data: "Scheduler started", status: 200 });
+      new Scheduler(); // Inicia o cron job
+      return res
+        .status(200)
+        .json({ message: "Scheduler started", status: 200 });
     } catch (error) {
-      console.error("Erro no scheduler:", error);
+      console.error("Erro ao iniciar o scheduler:", error);
       return res
         .status(500)
         .json({ error: (error as Error).message, status: 500 });
+    }
+  }
+
+  private async insertNews() {
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/api/search/news"
+      ); // ✅ coloque aqui a URL do seu ambiente de produção se necessário
+
+      return response;
+    } catch (error) {
+      console.error("Erro na requisição insertNews:", (error as Error).message);
+      throw error;
     }
   }
 }
