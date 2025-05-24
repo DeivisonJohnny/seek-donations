@@ -24,7 +24,9 @@ export type SearchBraveResponse = {
         index?: number;
         all: boolean;
       }>;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       top: any[]; // Ajuste conforme estrutura real
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       side: any[]; // Ajuste conforme estrutura real
     };
     type: string;
