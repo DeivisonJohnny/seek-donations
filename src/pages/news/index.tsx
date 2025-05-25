@@ -1,5 +1,4 @@
-"use client";
-
+import { Spin } from "antd";
 import { useState, useEffect } from "react";
 import { Clock, ExternalLink } from "lucide-react";
 import NewsApi, { NewsType } from "@/service/NewsApi";
@@ -9,6 +8,7 @@ export default function NewsScreen() {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentDateTime] = useState("");
   const [newsItems, setNewsTypes] = useState<NewsType[]>([]);
+  const [loading, setLoading] = useState(true);
 
   async function fetchData() {
     try {
@@ -17,6 +17,8 @@ export default function NewsScreen() {
       setNewsTypes(data);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -90,9 +92,13 @@ export default function NewsScreen() {
               ))
             ) : (
               <div className="text-center py-10 bg-zinc-800 rounded-lg">
-                <p className="text-zinc-400">
-                  Nenhuma notícia encontrada para sua busca.
-                </p>
+                {loading ? (
+                  <Spin />
+                ) : (
+                  <p className="text-zinc-400">
+                    Nenhuma notícia encontrada para sua busca.
+                  </p>
+                )}
               </div>
             )}
           </div>
