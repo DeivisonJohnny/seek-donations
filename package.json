@@ -18,6 +18,7 @@
     "@google/genai": "^0.13.0",
     "@prisma/client": "^6.7.0",
     "@react-google-maps/api": "^2.20.6",
+    "antd": "^5.25.2",
     "axios": "^1.9.0",
     "body-parser": "^1.20.3",
     "express": "4",
