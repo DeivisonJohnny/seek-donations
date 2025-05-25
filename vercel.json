@@ -1,0 +1,17 @@
+{
+  "headers": [
+    {
+      "source": "/api/search/news",
+      "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }]
+    },
+    {
+      "source": "/api/:path*",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://seek-donations.vercel.app/"
+        }
+      ]
+    }
+  ]
+}
